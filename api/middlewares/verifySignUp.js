@@ -2,7 +2,7 @@ const db = require('../models')
 
 const User = db.user
 
-checkDuplicateEmail = (req, res, next) => {
+const checkDuplicateEmail = (req, res, next) => {
     // Email
     User.findOne({
         email: req.body.email,
