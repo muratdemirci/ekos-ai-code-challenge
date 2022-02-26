@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
+
 mongoose.Promise = global.Promise
 
-//explain this maybe
+// explain this maybe
 const db = {}
 
 db.mongoose = mongoose

@@ -1,3 +1,3 @@
 module.exports = {
-  secret: 'murat-for-the-win',
+    secret: 'murat-for-the-win',
 }
