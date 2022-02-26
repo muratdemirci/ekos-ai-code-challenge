@@ -7,36 +7,35 @@ Requirements:
 User Service:
 
 
-- [ ]   There must be a user registration service.
+- [ ] There must be a user registration service.
     
-- [ ]   A user can register to the system and of course log in afterwards.
+- [ ] A user can register to the system and of course log in afterwards.
 
 - [ ] You do not have to implement e2e security. But if we can see JWT based authentication there of course that could be very positive.
     
 
 Book Stock Service:
 
-- [ ]  There must be a stock tracking service where you can add, remove, update and delete books.
+- [ ] There must be a stock tracking service where you can add, remove, update and delete books.
     
 
 Recommendation Service:
 
-- [ ]  We care about matching a lot. So, in here we would like you to design a recommendation service. This service recommends some books to the user whenever user requests to get some recommendation.
-    
+- [ ] We care about matching a lot. So, in here we would like you to design a recommendation service. This service recommends some books to the user whenever user requests to get some recommendation.
 
-- [ ]  Please keep that in mind a book has two main criteria for being offered. One of them is the kind and the other one is the NSPF.
+- [ ] Please keep that in mind a book has two main criteria for being offered. One of them is the kind and the other one is the NSPF.
     
-- [ ]  NSPF is a calculation like “(number of sell) * (pricing factor)”. Our customers intent to buy always the cheapest book(s).
+- [ ] NSPF is a calculation like “(number of sell) * (pricing factor)”. Our customers intent to buy always the cheapest book(s).
     
-- [ ]  If a kind of a book matches the interest of the user, then this book(s) can be recommended. And pls offer up to 5 books to the customer.
+- [ ] If a kind of a book matches the interest of the user, then this book(s) can be recommended. And pls offer up to 5 books to the customer.
     
 
 Order Service(Bonus):
 
-- [ ]  A customer can buy one or more books over an order service.
+- [ ] A customer can buy one or more books over an order service.
     
 
-- [ ]  This service is optional so if you can create one your chances can be increased.
+- [ ] This service is optional so if you can create one your chances can be increased.
     
 
 So please think simply and focus on the customer's needs. You can extend, modify or complete any part of the requirements but it is better not to destroy the main goal.
