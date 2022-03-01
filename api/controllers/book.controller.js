@@ -101,3 +101,8 @@ exports.findOne = (req, res) => {
             })
         })
 }
+
+exports.discoverBooks = () => {
+    //TODO: recommendation system
+    return 'ok'
+}

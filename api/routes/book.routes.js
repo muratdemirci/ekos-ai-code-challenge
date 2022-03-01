@@ -21,4 +21,11 @@ module.exports = function (app) {
 
     // Delete a Book with id
     app.delete('/api/books/:id', [authJwt.verifyToken], bookController.delete)
+
+    // Retrieve a books for user
+    app.get(
+        '/api/books/discover/:userId',
+        [authJwt.verifyToken],
+        bookController.discoverBooks
+    )
 }
