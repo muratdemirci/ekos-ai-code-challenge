@@ -40,7 +40,7 @@ const createBooks = async () => {
             name: genRandomBookName(),
             description: genRandomBookDesc(),
             stockQuantity: genRandInt(0, 999),
-            price: priceHistory[0],
+            price: priceHistory[2],
             priceHistory: priceHistory,
             numberOfSell: genRandInt(0, 999),
             genres: genRandomBookGenres(),
