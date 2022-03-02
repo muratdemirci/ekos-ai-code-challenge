@@ -40,7 +40,7 @@ const bookSchema = new mongoose.Schema({
 
 bookSchema.virtual('priceDiff').get(function () {
     // TODO: find diff between prices
-    return this.priceHistory + ' falan ' + this.priceHistory
+    return `${this.priceHistory} falan ${this.priceHistory}`
 })
 
 const Book = mongoose.model('Book', bookSchema)

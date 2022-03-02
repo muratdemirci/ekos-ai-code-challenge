@@ -43,7 +43,7 @@ exports.update = (req, res) => {
         })
     }
 
-    const id = req.params.id
+    const { id } = req.params
 
     Book.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
         .then((data) => {
@@ -55,14 +55,14 @@ exports.update = (req, res) => {
         })
         .catch((err) => {
             res.status(500).send({
-                message: 'Error updating Book with id=' + id,
+                message: `Error updating Book with id=${id}`,
             })
         })
 }
 
 // Delete a Book with the specified id in the request
 exports.delete = (req, res) => {
-    const id = req.params.id
+    const { id } = req.params
 
     Book.findByIdAndRemove(id, { useFindAndModify: false })
         .then((data) => {
@@ -78,31 +78,30 @@ exports.delete = (req, res) => {
         })
         .catch((err) => {
             res.status(500).send({
-                message: 'Could not delete Book with id=' + id,
+                message: `Could not delete Book with id=${id}`,
             })
         })
 }
 
 // Find a single Book with an id
 exports.findOne = (req, res) => {
-    const id = req.params.id
+    const { id } = req.params
 
     Book.findById(id)
         .then((data) => {
             if (!data)
                 res.status(404).send({
-                    message: 'Not found Book with id ' + id,
+                    message: `Not found Book with id ${id}`,
                 })
             else res.send(data)
         })
         .catch((err) => {
             res.status(500).send({
-                message: 'Error retrieving Book with id=' + id,
+                message: `Error retrieving Book with id=${id}`,
             })
         })
 }
 
-exports.discoverBooks = () => {
-    //TODO: recommendation system
-    return 'ok'
-}
+exports.discoverBooks = () =>
+    // TODO: recommendation system
+    'ok'

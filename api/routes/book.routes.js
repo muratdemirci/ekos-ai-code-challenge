@@ -2,7 +2,7 @@ const { authJwt } = require('../middlewares')
 const bookController = require('../controllers/book.controller')
 
 module.exports = function (app) {
-    app.use(function (req, res, next) {
+    app.use((req, res, next) => {
         res.header(
             'Access-Control-Allow-Headers',
             'x-access-token, Origin, Content-Type, Accept'
@@ -23,6 +23,8 @@ module.exports = function (app) {
     app.delete('/api/books/:id', [authJwt.verifyToken], bookController.delete)
 
     // Retrieve a books for user
+    // WHY?: I am getting userId from params instead of access token...
+    // Because I just want it this way dunno why
     app.get(
         '/api/books/discover/:userId',
         [authJwt.verifyToken],
