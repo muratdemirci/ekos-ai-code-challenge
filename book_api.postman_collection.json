@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "228454d8-5c83-4877-bc3e-d9c0814ceac0",
+		"name": "book api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"filan@email.com\",\r\n    \"password\": \"123456\",\r\n    \"interests\": [\"comedy\", \"drama\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"adam@heaven.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Add books",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMWQ1ODc1MDRiNGE5MjA1NTQzY2Q2YyIsImlhdCI6MTY0NjA5MzU3MywiZXhwIjoxNjQ2MTc5OTczfQ.thgs6_p9sV66lIJBDctel_BGGV-iEpaxoJ154zqdbW0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test name\",\r\n    \"description\": \"test description\",\r\n    \"stockQuantity\": 9,\r\n    \"price\": 500,\r\n    \"priceHistory\": [500, 1500, 2000],\r\n    \"numberOfSell\": 100,\r\n    \"genres\": [\"comedy\", \"drama\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update books",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjAxMzA1NjIxYmYzYjlmNTIzMjE3MiIsImlhdCI6MTY0NjI3MjIzNywiZXhwIjoxNjQ2MzU4NjM3fQ.C9OSpoIEnyiwpPTJXtiriPHsapB3cNkH1mq1OY4rK_Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"price\": 2.27\r\n        \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/books/62201306621bf3b9f52321ed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books",
+								"62201306621bf3b9f52321ed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Discover books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMWY5NGRjNjRhM2RiYTViMmFjOTQ1YiIsImlhdCI6MTY0NjI0NDgzOCwiZXhwIjoxNjQ2MzMxMjM4fQ.GAjDokYFM6qZvwQ3P98XjrUl68h0AzdaKpSngR4uNVI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/books/discover/62201305621bf3b9f5232172",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books",
+								"discover",
+								"62201305621bf3b9f5232172"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single book",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMWQ1ODc1MDRiNGE5MjA1NTQzY2Q2YyIsImlhdCI6MTY0NjA5MzU3MywiZXhwIjoxNjQ2MTc5OTczfQ.thgs6_p9sV66lIJBDctel_BGGV-iEpaxoJ154zqdbW0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/books/621d668fae8b68e5d4d3119f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books",
+								"621d668fae8b68e5d4d3119f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete single book",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMWQ1ODc1MDRiNGE5MjA1NTQzY2Q2YyIsImlhdCI6MTY0NjA5MzU3MywiZXhwIjoxNjQ2MTc5OTczfQ.thgs6_p9sV66lIJBDctel_BGGV-iEpaxoJ154zqdbW0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/books/621d668fae8b68e5d4d3119f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books",
+								"621d668fae8b68e5d4d3119f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
