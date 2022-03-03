@@ -1,6 +1,7 @@
 const db = require('../models')
 
 const Book = db.book
+const User = db.user
 
 // Create and Save a new Book
 exports.create = (req, res) => {
@@ -102,6 +103,26 @@ exports.findOne = (req, res) => {
         })
 }
 
-exports.discoverBooks = () =>
-    // TODO: recommendation system
-    'ok'
+exports.discoverBooks = async (req, res) => {
+    // get the user
+    const user = await User.findOne({ id: req.userId })
+
+    // find perfect matchs between interests and book genres, sort by low price and high sells, limit 5
+
+    Book.find({ genres: { $all: user.interests } })
+        // get low price, high sells
+        .sort({ price: 1, numberOfSell: -1 })
+        .limit(5)
+        .then((data) => {
+            if (!data)
+                res.status(404).send({
+                    message: `Not found Book with id ${id}`,
+                })
+            else res.send(data)
+        })
+        .catch((err) => {
+            res.status(500).send({
+                message: `Error retrieving Book with id=${id}`,
+            })
+        })
+}
