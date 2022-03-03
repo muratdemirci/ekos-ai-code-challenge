@@ -1,52 +1,60 @@
-*BuyTheBook Store:*
+## About The Project
 
 Hi **BuyTheBook** is one of the cool online book stores. In here we sell the books with the best prices to the best matching customers. Matching is the key driver of our business so pls implement another cool matching API for our clients (Either mobile or web).
 
 Requirements:
+**User Service:**
 
-User Service:
+-   [x] There must be a user registration service.
+-   [x] A user can register to the system and of course log in afterwards.
+-   [x] JWT based authentication there of course that could be very positive.
 
+**Book Stock Service:**
 
-- [ ]   There must be a user registration service.
-    
-- [ ]   A user can register to the system and of course log in afterwards.
+-   [x] There must be a stock tracking service where you can add, remove, update and delete books.
 
-- [ ] You do not have to implement e2e security. But if we can see JWT based authentication there of course that could be very positive.
-    
+**Recommendation Service:**
 
-Book Stock Service:
-
-- [ ]  There must be a stock tracking service where you can add, remove, update and delete books.
-    
-
-Recommendation Service:
-
-- [ ]  We care about matching a lot. So, in here we would like you to design a recommendation service. This service recommends some books to the user whenever user requests to get some recommendation.
-    
-
-- [ ]  Please keep that in mind a book has two main criteria for being offered. One of them is the kind and the other one is the NSPF.
-    
-- [ ]  NSPF is a calculation like “(number of sell) * (pricing factor)”. Our customers intent to buy always the cheapest book(s).
-    
-- [ ]  If a kind of a book matches the interest of the user, then this book(s) can be recommended. And pls offer up to 5 books to the customer.
-    
+-   [x] This service recommends some books to the user
+-   [x] Book has two main criteria is the kind and the other one is the NSPF.
+-   [x] NSPF is a calculation like “(number of sell) \* (pricing factor)”.
+-   [x] Book matches the interest of the user, then this book(s) can be recommended.
 
 Order Service(Bonus):
 
-- [ ]  A customer can buy one or more books over an order service.
-    
+-   [ ] A customer can buy one or more books over an order service.
+-   [ ] This service is optional so if you can create one your chances can be increased.
 
-- [ ]  This service is optional so if you can create one your chances can be increased.
-    
+### Built With
 
-So please think simply and focus on the customer's needs. You can extend, modify or complete any part of the requirements but it is better not to destroy the main goal.
+-   [Express](https://expressjs.com/)
+-   [Mongoose](https://mongoosejs.com/)
 
-Also, we prefer to use the services in a containerized cluster. Better to use a NoSQL DB and it would be great if you could implement GraphQL but it is optional.
+### Installation
 
-It could be very nice to have APIs in action so pls send your postman collection or similar.
+_So I've made a seeder so you can test the case study very quickly, also there will be postman output 👌._
 
-Choose your favorite language, framework or libs. Design your architecture with no doubt. We are all fine with any tech stack. Please share your github repo with us for the review process. A meaningful git history is very much welcome.
+1. Clone the repo
+    ```sh
+    git clone https://github.com/muratdemirci/ekos-ai-code-challenge.git
+    ```
+2. Change mongodb config in (api/config/db.config.js)
+    ```js
+     HOST: 'localhost',
+     PORT: 27017,
+     DB: 'follow_the_deusmur',
+    ```
+3. Install NPM packages
+    ```sh
+    npm install
+    ```
+4. Run npm seed (Which is generates first user and books)
+    ```sh
+    npm run seed
+    ```
+5. Install NPM packages
+    ```sh
+    npm start
+    ```
 
-Have fun,
-
-ekos.ai Tech Team!
+-   [Don't forget to import _book api.postman_collection.json_](./book_api.postman_collection)
