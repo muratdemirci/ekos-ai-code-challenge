@@ -36,7 +36,7 @@ _So I've made a seeder so you can test the case study very quickly, also there w
 
 1. Clone the repo
     ```sh
-    git clone https://github.com/muratdemirci/ekos-ai-code-challenge.git
+    git clone https://github.com/muratdemirci/book-api-code-challenge.git
     ```
 2. Change mongodb config in (api/config/db.config.js)
     ```js
